@@ -38,6 +38,10 @@ if __name__ == "__main__":
 
     accuracy = model.score(X_test, y_test)
 
+    # sebelum log_param / log_metric
+    if mlflow.active_run() is None:
+        mlflow.start_run()
+    
     mlflow.log_param("n_estimators", n_estimators)
     mlflow.log_param("max_depth", max_depth)
     mlflow.log_metric("accuracy", accuracy)
