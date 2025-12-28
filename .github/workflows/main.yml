@@ -35,10 +35,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install mlflow  
-          
-      - name: Set MLflow tracking
-        run: |
-          export MLFLOW_TRACKING_URI=file://$GITHUB_WORKSPACE/mlruns
     
       # Run as a mlflow project
       - name: Run mlflow project
